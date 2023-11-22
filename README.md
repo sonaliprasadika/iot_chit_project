@@ -1,13 +1,19 @@
 # Chit Project
 
-* [Introduction](##Introduction)
-* [Objective](###Objective)
-* [Conclusion](##Conclusion)
-* [Reference](##Reference)
+* [Introduction](#Introduction)
+    * [Objective](#Objective)
+* [Conclusion](#Conclusion)
+* [Reference](#Reference)
 
 ## Introduction
 
 This project aims to optimize bird farm harvest by implementing an IoT-based temperature monitoring system. The system utilizes RIOT OS as the firmware, FIT IOT-LAB as the testbed, IOT-m3 boards, and LPS331AP sensors for temperature measurement. The project's objective is to maintain the temperature inside the bird farms at the optimum level of 30 degrees Celsius, ensuring optimal conditions for bird growth and harvest. [1]
+
+### Objective
+
+* Implement an IoT-based temperature monitoring system using RIOT OS.
+* Utilize the FIT IoT-LAB testbed with IOT-m3 boards and LPS331AP sensors.
+* Optimize temperature conditions for bird farms to enhance harvest outcomes.
 
 
 
@@ -85,4 +91,7 @@ int main(void)
 
 ## Reference 
 
-[1] https://www.fancom.com/blog/what-is-the-optimal-temperature-for-poultry#:~:text=The%20birds%20will%20eat%20less,extreme%20temperatures%20can%20cause%20illness.
+1. https://www.fancom.com/blog/what-is-the-optimal-temperature-for-poultry#:~:text=The%20birds%20will%20eat%20less,extreme%20temperatures%20can%20cause%20illness.
+2. RIOT OS Documentation: https://riot-os.org/
+3. FIT IoT-LAB Documentation: https://www.iot-lab.info/
+4. [LPS331AP Sensor Datasheet](https://www.alldatasheet.com/datasheet-pdf/pdf/473924/STMICROELECTRONICS/LPS331AP.html)
