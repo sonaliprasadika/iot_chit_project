@@ -1,23 +1,31 @@
-# Chit Project
+# Chit Project - Optimizing Poultry House Climate for Enhanced Performance
 
 * [Introduction](#Introduction)
-    * [Objective](#Objective)
+* [Background](#Background)
+* [Objective](#Objective)
 * [Conclusion](#Conclusion)
 * [Reference](#Reference)
 
 ## Introduction
 
-This project aims to optimize bird farm harvest by implementing an IoT-based temperature monitoring system. The system utilizes RIOT OS as the firmware, FIT IOT-LAB as the testbed, IOT-m3 boards, and LPS331AP sensors for temperature measurement. The project's objective is to maintain the temperature inside the bird farms at the optimum level of 30 degrees Celsius, ensuring optimal conditions for bird growth and harvest. [1]
+Poultry farming is a delicate process that requires careful monitoring and control of various environmental factors to ensure the health and productivity of the birds. One of the key factors that influence the well-being and productivity of poultry is the climate within the poultry houses. This project aims to optimize the conditions within poultry farms, with a particular focus on temperature regulation, using Internet of Things (IoT) technology. [1]
 
-### Objective
+## Background 
 
-* Implement an IoT-based temperature monitoring system using RIOT OS.
-* Utilize the FIT IoT-LAB testbed with IOT-m3 boards and LPS331AP sensors.
-* Optimize temperature conditions for bird farms to enhance harvest outcomes.
+The optimal temperature inside the poultry house is a crucial factor for the well-being and productivity of the birds. An ambient temperature of 30 degrees Celsius is often considered comfortable for the birds. However, this temperature may feel pleasant or oppressive to the birds depending on the relative humidity inside the poultry house.
+
+For instance, with high relative humidity, the birds may perceive the temperature to be higher than the actual ambient temperature. In such cases, the temperature setpoint can be adjusted slightly lower to ensure the birds remain in their thermal comfort zone. Conversely, with lower levels of humidity, the birds may perceive the temperature to be lower than the actual ambient temperature. Therefore, the temperature setpoint can be maintained slightly higher to ensure the birds’ comfort.
+
+In more advanced systems, the temperature and humidity are not controlled separately. Instead, the climate controller determines the temperature setpoint by factoring in the effect of humidity. This approach ensures that the birds always remain in their thermal comfort zone, thereby optimizing their health, welfare, and productivity.
+
+It’s important to note that while an ambient temperature of 30 degrees Celsius is often considered optimal, the actual optimal temperature may vary depending on various factors such as the type of birds, their age, and their health status. Therefore, continuous monitoring and adjustment of the temperature and other environmental conditions are essential for successful poultry farming.
 
 
+## Objective
 
-Among the sensors provided in the FIT IoT-LAB, we used lps331ap as the temperature and atmospheric pressure sensor. Only the temperature is measured here. The `main.c` file is as below. 
+The objective of this project is to develop and implement an IoT-based system to monitor and control the temperature within poultry houses accurately. The system will use the IoT-m3 board and the lps331ap sensor to measure not only the ambient temperature but also the relative humidity and wind speed. The data collected will be processed using the RIOT language and the FIT IoT-LAB as the testbed. The ultimate goal is to maintain the birds in their thermal comfort zone, thereby optimizing their health, welfare, and productivity. This project aims to demonstrate the effectiveness of IoT technology in improving the conditions within poultry farms and, consequently, the results of poultry farming.
+
+
 
 ```c
 #include <stdlib.h>
@@ -88,6 +96,8 @@ int main(void)
     return 0;
 }
 ```
+
+## Conclusion
 
 ## Reference 
 
