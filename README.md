@@ -49,7 +49,31 @@ The objective of this project is to develop and implement an IoT-based system to
 **NEED TO EDIT**
 
 * Interface with the LPS331AP sensor to measure temperature.
-* Implement the necessary drivers for the sensor in C using RIOT OS. The main steps are as follows. 
+* Implement the necessary drivers for the sensor in C using RIOT OS. 
+
+### Data Transmission:
+
+**NEED TO EDIT**
+
+
+* Develop a firmware that periodically reads temperature data.
+* Use RIOT's networking capabilities to send data to a central server.
+
+### Networking:
+
+**NEED TO EDIT**
+
+* Utilize RIOT's network stack for reliable communication.
+* Ensure the IOT-m3 boards can connect to the FIT IoT-LAB infrastructure.
+
+### Remote Testing:
+
+**NEED TO EDIT**
+
+* Deploy the firmware on the FIT IoT-LAB testbed.
+* Monitor temperature data remotely through the FIT IoT-LAB interface.
+
+The main steps are as follows. 
 
 1. The `main.c` is [here.](main.c)
 
@@ -110,29 +134,6 @@ In the RIOT shell, the output appears below.
 ![output5](images/output5.JPG)
 
 
-### Data Transmission:
-
-**NEED TO EDIT**
-
-
-Develop a firmware that periodically reads temperature data.
-Use RIOT's networking capabilities to send data to a central server.
-
-### Networking:
-
-**NEED TO EDIT**
-
-
-Utilize RIOT's network stack for reliable communication.
-Ensure the IOT-m3 boards can connect to the FIT IoT-LAB infrastructure.
-
-### Remote Testing:
-
-**NEED TO EDIT**
-
-
-Deploy the firmware on the FIT IoT-LAB testbed.
-Monitor temperature data remotely through the FIT IoT-LAB interface.
 
 ## Conclusion
 In conclusion, the project emphasizes the critical role of environmental conditions, particularly temperature, in poultry farming and proposes a sophisticated solution through the integration of Internet of Things (IoT) technology. Poultry farming is a complex endeavor where the well-being and productivity of birds are intricately tied to the climate within their houses. Maintaining an optimal ambient temperature is of paramount importance, and this project seeks to address this challenge with a focus on precise temperature regulation using IoT devices.
