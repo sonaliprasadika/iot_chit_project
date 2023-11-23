@@ -105,6 +105,10 @@ In this experiment, the output appears as below.
 ```terminal
 make IOTLAB_NODE=auto -C /senslab/users/iot2023oulu99/sensor_test term
 ```
+In the RIOT shell, the output appears below.  
+
+![output5](images/output5.JPG)
+
 
 ### Data Transmission:
 
