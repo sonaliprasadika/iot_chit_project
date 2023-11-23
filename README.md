@@ -3,6 +3,7 @@
 * [Introduction](#Introduction)
 * [Background](#Background)
 * [Objective](#Objective)
+* [Methodology](#Methodology)
 * [Conclusion](#Conclusion)
 * [Reference](#Reference)
 
@@ -25,77 +26,57 @@ It’s important to note that while an ambient temperature of 30 degrees Celsius
 
 The objective of this project is to develop and implement an IoT-based system to monitor and control the temperature within poultry houses accurately. The system will use the IoT-m3 board and the lps331ap sensor to measure not only the ambient temperature but also the relative humidity and wind speed. The data collected will be processed using the RIOT language and the FIT IoT-LAB as the testbed. The ultimate goal is to maintain the birds in their thermal comfort zone, thereby optimizing their health, welfare, and productivity. This project aims to demonstrate the effectiveness of IoT technology in improving the conditions within poultry farms and, consequently, the results of poultry farming.
 
+## Methodology
+
+### Hardware Components:
+
+1. IOT-m3 boards: Used for processing and communication.
+2. LPS331AP sensors: Measure temperature within the bird farms.
+
+### Software Components:
+
+1. RIOT OS: Lightweight operating system for IoT devices.
+2. C Programming Language: Used for coding the firmware.
+
+### Communication:
+
+1. Utilize the FIT IoT-LAB testbed for remote testing and deployment.
+
+## Implementation:
+
+### Sensor Integration:
+
+**NEED TO EDIT**
+
+Interface with the LPS331AP sensor to measure temperature.
+Implement the necessary drivers for the sensor in C using RIOT OS.
+
+The `main.c` is [here.](main.c)
+The `Makefile` is [here.](Makefile)
+
+### Data Transmission:
+
+**NEED TO EDIT**
 
 
-```c
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+Develop a firmware that periodically reads temperature data.
+Use RIOT's networking capabilities to send data to a central server.
 
-#include "thread.h"
-#include "ztimer.h"
-#include "shell.h"
+### Networking:
 
-#include "mutex.h"
-
-#include "lpsxxx.h"
-#include "lpsxxx_params.h"
-
-static lpsxxx_t lpsxxx;
-
-static void _lpsxxx_usage(char *cmd)
-{
-    printf("usage: %s <temperature|pressure>\n", cmd);
-}
-
-static int lpsxxx_handler(int argc, char *argv[])
-{
-    if (argc < 2) {
-        _lpsxxx_usage(argv[0]);
-        return -1;
-    }
-
-    /* Implement the lpsxxx temperature/pressure subcommands here */
-     if (!strcmp(argv[1], "temperature")) {
-        int16_t temp = 0;
-        lpsxxx_read_temp(&lpsxxx, &temp);
-        printf("Temperature: %i.%u°C\n", (temp / 100), (temp % 100));
-    }
-    else if (!strcmp(argv[1], "pressure")) {
-        uint16_t pres = 0;
-        lpsxxx_read_pres(&lpsxxx, &pres);
-        printf("Pressure: %uhPa\n", pres);
-    }
-    else {
-        _lpsxxx_usage(argv[0]);
-        return -1;
-    }
-
-    return 0;
-}
-
-static const shell_command_t commands[] = {
-    
-    /* Add the lpsxxx command description here */
-    { "lps", "read the lpsxxx values", lpsxxx_handler },
+**NEED TO EDIT**
 
 
-    { NULL, NULL, NULL}
-};
+Utilize RIOT's network stack for reliable communication.
+Ensure the IOT-m3 boards can connect to the FIT IoT-LAB infrastructure.
 
-int main(void)
-{
-    /* Initialize the lpsxxx sensor here */
-    
-    lpsxxx_init(&lpsxxx, &lpsxxx_params[0]);
+### Remote Testing:
 
-    /* Everything is ready, let's start the shell now */
-    char line_buf[SHELL_DEFAULT_BUFSIZE];
-    shell_run(commands, line_buf, SHELL_DEFAULT_BUFSIZE);
+**NEED TO EDIT**
 
-    return 0;
-}
-```
+
+Deploy the firmware on the FIT IoT-LAB testbed.
+Monitor temperature data remotely through the FIT IoT-LAB interface.
 
 ## Conclusion
 In conclusion, the project emphasizes the critical role of environmental conditions, particularly temperature, in poultry farming and proposes a sophisticated solution through the integration of Internet of Things (IoT) technology. Poultry farming is a complex endeavor where the well-being and productivity of birds are intricately tied to the climate within their houses. Maintaining an optimal ambient temperature is of paramount importance, and this project seeks to address this challenge with a focus on precise temperature regulation using IoT devices.
