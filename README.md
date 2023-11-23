@@ -48,8 +48,8 @@ The objective of this project is to develop and implement an IoT-based system to
 
 **NEED TO EDIT**
 
-Interface with the LPS331AP sensor to measure temperature.
-Implement the necessary drivers for the sensor in C using RIOT OS. The main steps are as follows. 
+* Interface with the LPS331AP sensor to measure temperature.
+* Implement the necessary drivers for the sensor in C using RIOT OS. The main steps are as follows. 
 
 1. The `main.c` is [here.](main.c)
 
