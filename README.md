@@ -52,7 +52,8 @@ Interface with the LPS331AP sensor to measure temperature.
 Implement the necessary drivers for the sensor in C using RIOT OS.
 
 The `main.c` is [here.](main.c)
-The `Makefile` is [here.](Makefile)
+
+The `Makefile` is [here.](Makefile) The path to the `RIOTBASE` directory needs to be changed according to the host. 
 
 ### Data Transmission:
 
