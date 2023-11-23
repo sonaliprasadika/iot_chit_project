@@ -49,11 +49,62 @@ The objective of this project is to develop and implement an IoT-based system to
 **NEED TO EDIT**
 
 Interface with the LPS331AP sensor to measure temperature.
-Implement the necessary drivers for the sensor in C using RIOT OS.
+Implement the necessary drivers for the sensor in C using RIOT OS. The main steps are as follows. 
 
-The `main.c` is [here.](main.c)
+1. The `main.c` is [here.](main.c)
 
-The `Makefile` is [here.](Makefile) The path to the `RIOTBASE` directory needs to be changed according to the host. 
+2. The `Makefile` is [here.](Makefile) The path to the `RIOTBASE` directory needs to be changed according to the host. 
+
+3. After creating the files, run the below command on the terminal. This will be submitted for an experiment that lasts for 2 hours/120 minutes. 
+
+```terminal
+iotlab-experiment submit -n "chit-project" -d 120 -l 1,archi=m3:at86rf231+site=grenoble
+```
+
+The output will look like below. 
+
+![output1](images/output1.JPG)
+
+4. Next, wait for the experiment to be in the Running state.
+
+```terminal
+iotlab-experiment wait --timeout 30 --cancel-on-timeout
+```
+
+The output is:
+
+![output2](images/output2.JPG)
+
+5. The experiment node list can be viewed using the below command.
+
+```terminal
+iotlab-experiment --jmespath="items[*].network_address | sort(@)" get --nodes
+```
+
+The output is:
+
+![output3](images/output3.JPG)
+
+6. Before building and flashing the RIOT firmware application on SSH frontend, run the below command on the terminal to ensure that the RIOT related variables are correctly set.
+
+```terminal
+source /opt/riot.source
+```
+
+7. Build and flash the application using below command.
+```terminal
+make IOTLAB_NODE=auto flash
+```
+
+In this experiment, the output appears as below. 
+
+![output4](images/output4.JPG)
+
+8. Open a new terminal on the same SSH frontend and run connect to the serial port of the IoT-LAB M3 and observe the value displayed every 2 seconds. The path should be changed according to the host environment. 
+
+```terminal
+make IOTLAB_NODE=auto -C /senslab/users/iot2023oulu99/sensor_test term
+```
 
 ### Data Transmission:
 
